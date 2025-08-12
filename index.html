@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hangosítás • Alto TS415 (2×2500 W peak) + Shure SM58 + keverő</title>
+  <meta name="description" content="Profi, mobil hangosítás Várpalota–Székesfehérvár környékén. 2× Alto TS415 (2500 W peak), Shure SM58 mikrofonok állvánnyal, keverő, gyors kiállás." />
+  <link rel="preconnect" href="https://images.unsplash.com"/>
+  <style>
+    :root{
+      --bg:#0b0e13;--panel:#101521;--muted:#161b28;--line:#232b3b;--text:#e8eef7;--sub:#9fb0c8;
+      --acc:#7cf29a;--acc2:#7aa2f7;--rad:18px;--shadow:0 12px 40px rgba(0,0,0,.45)
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(124,242,154,.08), transparent 60%),
+      radial-gradient(1000px 500px at 10% -20%, rgba(122,162,247,.08), transparent 60%),
+      var(--bg);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1200px,92%);margin:0 auto}
+    header{position:sticky;top:0;background:rgba(11,14,19,.7);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:50}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800}
+    .logo{width:36px;height:36px;border-radius:12px;background:linear-gradient(135deg,var(--acc),var(--acc2));box-shadow:var(--shadow)}
+    .nav a{opacity:.9;margin-left:18px;font-size:15px}
+    .cta{padding:10px 16px;border-radius:999px;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#0b0e13;font-weight:800;box-shadow:var(--shadow)}
+
+    /* hero */
+    .hero{padding:72px 0 24px}
+    .grid2{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+    h1{font-size:clamp(28px,4.6vw,58px);line-height:1.05;margin:0 0 10px}
+    .lead{font-size:clamp(16px,2.1vw,20px);color:var(--sub);margin:0 0 18px}
+    .badges{display:flex;flex-wrap:wrap;gap:10px;margin:16px 0 24px}
+    .badge{background:var(--muted);border:1px solid rgba(255,255,255,.06);padding:8px 12px;border-radius:999px;font-size:13px;color:var(--sub)}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--rad);box-shadow:var(--shadow)}
+    .hero-media{padding:14px}
+    .hero-media img{width:100%;height:360px;object-fit:cover;border-radius:calc(var(--rad) - 6px);filter:contrast(1.05) saturate(1.1) brightness(.95)}
+
+    section{padding:62px 0}
+    h2{font-size:clamp(22px,3.2vw,36px);margin:0 0 8px}
+    .sub{color:var(--sub);margin:0 0 22px}
+
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .tile{padding:18px}
+    .tile h3{margin:0 0 6px;font-size:18px}
+    .tile p{margin:0;color:var(--sub);font-size:14px}
+
+    /* gear gallery */
+    .gear{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+    .gear img{width:100%;height:280px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,.08)}
+    .gear .caption{font-size:13px;color:var(--sub);margin-top:6px}
+
+    /* pricing */
+    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .price{position:relative;padding:18px}
+    .tag{position:absolute;top:12px;right:12px;font-size:12px;background:var(--muted);border:1px solid rgba(255,255,255,.06);padding:6px 10px;border-radius:999px;color:var(--sub)}
+    .num{font-size:36px;font-weight:900;margin:4px 0 8px}
+    .price ul{list-style:none;margin:12px 0 0;padding:0}
+    .price li{padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.08);font-size:15px;color:var(--text)}
+
+    /* checklist */
+    .list{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+    .item{display:flex;gap:10px;align-items:flex-start;background:var(--panel);border:1px solid var(--line);padding:12px;border-radius:12px;color:var(--sub)}
+    .dot{width:10px;height:10px;border-radius:50%;background:linear-gradient(135deg,var(--acc),var(--acc2));margin-top:6px}
+
+    /* contact */
+    .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+    form{display:grid;gap:12px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;background:var(--muted);border:1px solid rgba(255,255,255,.08);color:var(--text)}
+    textarea{min-height:120px;resize:vertical}
+    button.btn{padding:12px 16px;border-radius:12px;font-weight:800;background:linear-gradient(135deg,var(--acc),var(--acc2));color:#0b0e13;border:none;cursor:pointer;box-shadow:var(--shadow)}
+
+    footer{padding:30px 0 46px;border-top:1px solid rgba(255,255,255,.06);color:var(--sub)}
+
+    @media (max-width:1000px){.grid2,.grid3,.pricing,.contact{grid-template-columns:1fr}.gear{grid-template-columns:1fr}.hero-media img{height:280px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top"><span class="logo"></span>Hangosítás • Fejér megye</a>
+      <nav>
+        <a href="#szolg">Szolgáltatások</a>
+        <a href="#felszereles">Felszerelés</a>
+        <a href="#arak">Árak</a>
+        <a href="#kapcsolat" class="cta">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <section class="hero">
+      <div class="grid2">
+        <div>
+          <h1>Alto TS415 • 2×2500 W peak<br/>Shure SM58 • keverő • gyors kiállás</h1>
+          <p class="lead">Kerti party, szülinap, céges esemény 60–150 főig. Várpalota, Székesfehérvár és környéke.</p>
+          <div class="badges">
+            <span class="badge">2× Alto Professional TS415</span>
+            <span class="badge">2× Shure SM58 (állvánnyal)</span>
+            <span class="badge">Keverő, kábelezés</span>
+            <span class="badge">Gyors telepítés</span>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap">
+            <a href="#arak" class="cta">Árak megtekintése</a>
+            <a href="#kapcsolat" class="badge">Gyors ajánlatkérés</a>
+          </div>
+        </div>
+        <div class="card hero-media">
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop" alt="Hangfalak és keverő – illusztráció"/>
+        </div>
+      </div>
+    </section>
+
+    <section id="szolg">
+      <h2>Szolgáltatások</h2>
+      <p class="sub">A tiszta érthetőség és ütős zene alapcsomagban.</p>
+      <div class="grid3">
+        <div class="card tile">
+          <h3>PA rendszer</h3>
+          <p>2× aktív Alto TS415 állványon. Torzításmentes hang, stabil lefedettség 60–150 főig.</p>
+        </div>
+        <div class="card tile">
+          <h3>Mikrofon & keverés</h3>
+          <p>2× Shure SM58 állvánnyal + kompakt keverő. Beszédhez és éneksávhoz ideális.</p>
+        </div>
+        <div class="card tile">
+          <h3>Kiállás + bontás</h3>
+          <p>Gyors kiépítés, kábelmenedzsment, próba, a végén tiszta bontás és elszállítás.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="felszereles">
+      <h2>Felszerelés</h2>
+      <p class="sub">Konkrétan ezekkel megyek – nem zsákbamacska.</p>
+      <div class="gear">
+        <div>
+          <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1600&auto=format&fit=crop" alt="Alto TS415 illusztráció – aktív hangfal"/>
+          <div class="caption">2× Alto Professional TS415 – 2500 W peak / 1000 W RMS, 15” – állványon</div>
+        </div>
+        <div>
+          <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?q=80&w=1200&auto=format&fit=crop" alt="Shure SM58 illusztráció – dinamikus mikrofon"/>
+          <div class="caption">2× Shure SM58 – dinamikus mikrofon, színpadi standard – mikrofonállvánnyal</div>
+          <img style="margin-top:12px" src="https://images.unsplash.com/photo-1519669417670-68775a50919b?q=80&w=1200&auto=format&fit=crop" alt="Kompakt keverőpult"/>
+          <div class="caption">Kompakt keverő – vonal/bemenetek, alap EQ, zenelejátszás telefonról/laptopról</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="arak">
+      <h2>Árak</h2>
+      <p class="sub">Irányárak. Pontos ajánlat helyszín és igény alapján.</p>
+      <div class="pricing">
+        <div class="card price">
+          <span class="tag">Legnépszerűbb</span>
+          <h3>Alap csomag</h3>
+          <div class="num">45 000 Ft</div>
+          <ul>
+            <li>4 óra helyszíni jelenlét</li>
+            <li>2× Alto TS415 + állvány</li>
+            <li>2× Shure SM58 + állvány</li>
+            <li>Keverő + kábelek</li>
+            <li>Várpalotán belüli ki‑/beszállás</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <h3>Plusz órák</h3>
+          <div class="num">+6 000 Ft/óra</div>
+          <ul>
+            <li>Rugalmas hosszabbítás</li>
+            <li>Éjszakai időszakban +1–2k/óra felár opcionális</li>
+            <li>Megbeszélés szerint</li>
+          </ul>
+        </div>
+        <div class="card price">
+          <h3>Utazás</h3>
+          <div class="num">200 Ft/km</div>
+          <ul>
+            <li>Várpalotán kívül</li>
+            <li>Oda-vissza, üzemanyag + idő</li>
+            <li>Parkolási díj külön, ha van</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Amiket előre egyeztetünk</h2>
+      <p class="sub">Így lesz gördülékeny a buli.</p>
+      <div class="list">
+        <div class="item"><span class="dot"></span><span>Helyszín, létszám, kültér/beltér, zenei igény (beszéd, háttérzene, tánc).</span></div>
+        <div class="item"><span class="dot"></span><span>Áram: 230V / 10A stabil, eső/nap elleni védelem, keverőasztalnak felület.</span></div>
+        <div class="item"><span class="dot"></span><span>Csatlakozás: 3,5 mm jack / BT vevő / laptop – pendrive nem garantált.</span></div>
+        <div class="item"><span class="dot"></span><span>Időbeosztás: kiállás 30–40 perc, bontás 20–30 perc a 4 órán felül.</span></div>
+      </div>
+    </section>
+
+    <section id="kapcsolat">
+      <h2>Kapcsolat</h2>
+      <p class="sub">Írj, vagy hívj – gyors ajánlatot adok.</p>
+      <div class="contact">
+        <div class="card tile">
+          <h3>Elérhetőség</h3>
+          <p class="sub">Szolgáltatási terület: Várpalota, Székesfehérvár, Fejér megye.</p>
+          <p>Telefon: <a href="tel:+3612345678">+36 12 345 678</a><br/>E‑mail: <a href="mailto:ajanlat@tehangositasod.hu">ajanlat@tehangositasod.hu</a></p>
+          <p class="sub">Facebook/Instagram linkek ide tehetők.</p>
+        </div>
+        <div class="card tile">
+          <form action="mailto:ajanlat@tehangositasod.hu" method="post" enctype="text/plain">
+            <input name="name" placeholder="Neved" required />
+            <input name="email" placeholder="Email címed" type="email" required />
+            <input name="phone" placeholder="Telefonszám" />
+            <textarea name="message" placeholder="Mikorra kell a hangosítás? Helyszín, létszám, igények…" required></textarea>
+            <button class="btn" type="submit">Ajánlatot kérek</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap">
+        <span>© <span id="y"></span> Hangosítás – Fejér megye</span>
+        <span><a href="#top">Vissza az elejére ↑</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+</body>
+</html>
